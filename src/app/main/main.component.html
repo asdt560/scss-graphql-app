@@ -1,1 +1,7 @@
 <p>main works!</p>
+<div *ngFor="let set of sets">
+  <div *ngIf="set.logo">
+    <img alt="logo" src="{{set.logo}}.png" />
+  </div>
+  {{set.name}}
+</div>
