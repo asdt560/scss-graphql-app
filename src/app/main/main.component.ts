@@ -9,11 +9,15 @@ import { CardsService } from '../cards.service';
 })
 export class MainComponent {
   cardsService: CardsService = inject(CardsService);
+  p: number = 1
   sets: any[] = [];
   constructor() {
     this.cardsService.getSets().then((data: any) => {
       this.sets = data.data.sets;
       console.log(this.sets)
     });
+  }
+  pageUp() {
+    this.p++;
   }
 }
