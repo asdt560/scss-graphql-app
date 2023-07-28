@@ -1,8 +1,7 @@
-<p>main works!</p>
-<div *ngFor="let set of sets | paginate: {itemsPerPage: 10, currentPage: p}">
-  <div *ngIf="set.logo">
-    <img alt="logo" src="{{set.logo}}.png" />
+<div class="container">
+  <div class="list">
+    <app-set-data *ngFor="let set of sets | paginate: {itemsPerPage: 12, currentPage: p}" [set]="set">
+    </app-set-data>
   </div>
-  {{set.name}}
+  <pagination-controls class="pagination" (pageChange)="p = $event"></pagination-controls>
 </div>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
