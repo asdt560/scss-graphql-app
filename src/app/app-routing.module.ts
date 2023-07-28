@@ -10,7 +10,7 @@ const routes: Routes = [
     title: 'Main'
   },
   {
-    path: 'set/:id',
+    path: 'set/:name',
     component: SetComponent,
     title: 'Set'
   }
