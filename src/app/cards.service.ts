@@ -1,19 +1,22 @@
 import { Injectable } from '@angular/core';
+import { Sets } from './interfaces';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CardsService {
-  state: any = [];
+  state : Sets | null = null;
   url = 'https://api.tcgdex.net/v2/graphql';
   constructor() { }
 
   async getSets() {
-    const response = await fetch(this.url, {
+    if(this.state) {
+      return this.state;
+    }
+    const response : { data: Sets } = await fetch(this.url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        Accept: 'application/json',
       },
       body: JSON.stringify({query: `{ sets 
         { 
@@ -27,19 +30,22 @@ export class CardsService {
           cards
           {
             image
+            name
+            id
           }
         } 
       }`}),
-    });
-    this.state = await response.json();
+    }).then((response) => response.json());
+    this.state = response.data;
     console.log(this.state)
     return this.state;
   }
 
   async getSet(name: string) {
-    if(this.state.length == 0) {
-      await this.getSets();
+    if(!this.state) {
+      this.state = await this.getSets();
+      return this.state?.sets.find((set: any) => set.name == name);
     }
-    return this.state.data.sets.find((set: any) => set.name == name);
+    return this.state?.sets.find((set: any) => set.name == name);
   }
 }
