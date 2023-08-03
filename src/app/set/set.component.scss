@@ -7,3 +7,13 @@
 img {
   width: 25%;
 }
+p {
+  text-align: center;
+}
+
+app-set {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
