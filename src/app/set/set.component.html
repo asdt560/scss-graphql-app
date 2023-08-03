@@ -1,5 +1,5 @@
-<p>{{name}}</p>
-<p>Cards: {{set!.cardCount.total}}</p>
+<p>{{set?.name}}</p>
+<p>Cards: {{set?.cardCount?.total}}</p>
 <div class="container" >
   <img 
     *ngFor="let card of set!.cards | paginate: {itemsPerPage: 8, currentPage: p}" 

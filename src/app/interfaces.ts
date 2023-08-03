@@ -5,6 +5,7 @@ export interface Card {
 }
 
 export interface Set {
+  id: string,
   name : string,
   logo : string,
   releaseDate : string,
@@ -15,5 +16,9 @@ export interface Set {
 }
 
 export interface Sets {
-  sets : Set[]
+  sets: {
+    id: string,
+    name : string,
+    logo : string,
+  }
 }

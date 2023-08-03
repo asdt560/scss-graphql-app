@@ -10,14 +10,13 @@ import { Set } from '../interfaces';
   styleUrls: ['./set.component.scss']
 })
 export class SetComponent {
-  constructor(private cardsService : CardsService) {}
   route : ActivatedRoute = inject(ActivatedRoute);
-  name : string = this.route.snapshot.paramMap.get('name') || "Base Set"
-  p: number = 1
+  id : string = this.route.snapshot.paramMap.get('id') || "Base Set"
   set : Set | null = null;
-  ngOnInit() {
-    this.cardsService.getSet(this.name).then((data : any) => {
-      this.set = data;
+  constructor(private cardsService : CardsService) {
+    this.cardsService.getSet(this.id).then((set : Set) => {
+      this.set = set;
     });
   }
+  p: number = 1
 }
