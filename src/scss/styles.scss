@@ -4,3 +4,7 @@
 p {
   @include color($color)
 }
+
+body {
+  margin: 0;
+}

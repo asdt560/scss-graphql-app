@@ -1,16 +1,4 @@
-.pagination ::ng-deep .ngx-pagination li {
-  border-radius: 20px;
-  border: 2px solid rgb(85, 85, 235);
-  color: rgb(85, 85, 235); 
-}
-
-.pagination ::ng-deep .ngx-pagination {
-  padding: 0;
-}
-
-.pagination ::ng-deep .ngx-pagination .current {
-  color: white; 
-}
+@import '../../scss/_mixins.scss';
 
 .container {
   display: flex;
@@ -32,3 +20,5 @@ app-set-data {
   width: 25%;
   height: 33%;
 }
+
+@include pagination-style
