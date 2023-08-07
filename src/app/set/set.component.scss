@@ -1,15 +1,23 @@
 @import '../../scss/_mixins.scss';
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 90%;
+  height: 80%;
 }
 
 img {
-  width: 15%;
+  width: 12%;
 }
 
 img:hover {
@@ -26,6 +34,11 @@ app-set {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.headline {
+  display: flex;
+  justify-content: space-around;
 }
 
 @include pagination-style;

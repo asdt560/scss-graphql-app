@@ -1,11 +1,16 @@
-<p>{{set?.name}}</p>
-<p>Cards: {{set?.cardCount?.total}}</p>
-<div class="container" >
-  <img
-    class="card"
-    *ngFor="let card of set!.cards | paginate: {itemsPerPage: 18, currentPage: p}" 
-    title="{{card.name}}" 
-    src="{{card.image}}/low.png" 
-  />
+<main>
+  <div class="headline"> 
+    <p>{{set?.name}}</p>
+    <p>Cards: {{set?.cardCount?.total}}</p>
+  </div>
+  <div class="container" >
+    <img
+      class="card"
+      *ngFor="let card of set!.cards | paginate: {itemsPerPage: 16, currentPage: p}" 
+      title="{{card.name}}" 
+      src="{{card.image}}/low.png" 
+    />
+  </div>
   <pagination-controls class="pagination" (pageChange)="p = $event"></pagination-controls>
-</div>
+</main>
+
