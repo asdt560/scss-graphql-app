@@ -1,3 +1,20 @@
 @mixin color($color) {
   color: $color;
 }
+
+@mixin pagination-style {
+  pagination-controls ::ng-deep .ngx-pagination li {
+    border-radius: 20px;
+    border: 2px solid rgb(85, 85, 235);
+    color: rgb(85, 85, 235); 
+  }
+  
+  pagination-controls ::ng-deep .ngx-pagination {
+    padding: 0;
+    margin: 0;
+  }
+  
+  pagination-controls ::ng-deep .ngx-pagination .current {
+    color: white; 
+  }  
+}

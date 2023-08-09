@@ -1,6 +1,6 @@
 <div class="container">
   <div class="list">
-    <app-set-data *ngFor="let set of sets | paginate: {itemsPerPage: 12, currentPage: p}" [set]="set">
+    <app-set-data *ngFor="let set of sets! | paginate: {itemsPerPage: 12, currentPage: p}" [set]="set">
     </app-set-data>
   </div>
   <pagination-controls class="pagination" (pageChange)="p = $event"></pagination-controls>
