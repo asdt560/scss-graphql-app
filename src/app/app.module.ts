@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { SetDataComponent } from './set-data/set-data.component';
 import { SetComponent } from './set/set.component';
+import { SearchPageComponent } from './search-page/search-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     SetDataComponent,
-    SetComponent
+    SetComponent,
+    SearchPageComponent
   ],
   imports: [
     NgxPaginationModule,

@@ -64,7 +64,21 @@ export class CardsService {
       }`}),
     }).then((response) => response.json());
     this.setState = response.data.set;
-    console.log(this.setState)
     return this.setState;
+  }
+
+  async getCard(name: string) {
+    const response : { data: {cards: [image: string]}} = await fetch(this.url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({query: `{ cards(filters: {name: "${name}"})
+        { 
+          image
+        } 
+      }`}),
+    }).then((response) => response.json());
+    return response.data.cards;
   }
 }

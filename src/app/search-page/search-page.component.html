@@ -1,0 +1,8 @@
+<p>search-page works!</p>
+<input 
+  title="Search" 
+  (change)="getCard($event)"
+/>
+<div *ngIf="cards">
+  <img *ngFor="let card of cards"  title="card image" src="{{card.image}}/low.png" />
+</div>
