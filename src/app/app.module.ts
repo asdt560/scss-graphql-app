@@ -7,6 +7,7 @@ import { MainComponent } from './main/main.component';
 import { SetDataComponent } from './set-data/set-data.component';
 import { SetComponent } from './set/set.component';
 import { SearchPageComponent } from './search-page/search-page.component';
+import { CardPageComponent } from './card-page/card-page.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { SearchPageComponent } from './search-page/search-page.component';
     MainComponent,
     SetDataComponent,
     SetComponent,
-    SearchPageComponent
+    SearchPageComponent,
+    CardPageComponent
   ],
   imports: [
     NgxPaginationModule,
